@@ -1,0 +1,2 @@
+ChooseForMe: ${application.version}
+spring-boot: ${spring-boot.version}
