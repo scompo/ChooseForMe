@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">ChooseForMe
+</title>
+<link href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<h1>
+						ChooseForMe <small>chooses for you</small>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div layout:fragment="panelTitle"></div>
+							</div>
+							<div class="panel-body">
+								<div layout:fragment="content"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js" th:href="@{js/bootstrap.min.js}"></script>
+</body>
+</html>
