@@ -1,44 +1,43 @@
 package com.github.scompo.chooseforme.web;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.github.scompo.chooseforme.domain.StuffToChoose;
-import com.github.scompo.chooseforme.services.StuffToChooseService;
+import com.github.scompo.chooseforme.domain.Stuffs;
 
 @Controller
+@SessionAttributes(names = { "allStuff" })
 public class PagesController {
-	
-	@Autowired
-	private StuffToChooseService stuffToChooseService;
-	
-	@ModelAttribute(value = "allStuff")
-	public List<StuffToChoose> populateStuffToChoose(){
-		
-		return stuffToChooseService.getAll();
-	}
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(){
-		
+	public String index(Model model) {
+
+		if (!model.containsAttribute("allStuff")) {
+
+			model.addAttribute("allStuff", new Stuffs());
+		}
+
 		return "index";
 	}
-	
+
 	@RequestMapping(value = "new", method = RequestMethod.POST)
-	public String saveNew(StuffToChoose stuffToChoose, Model model){
-		
-		return "redirect:/index";
+	public String saveNew(@ModelAttribute("newStuff") StuffToChoose newStuff, @ModelAttribute("allStuff") Stuffs stuffs) {
+
+		stuffs.add(newStuff);
+
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = "new", method = RequestMethod.GET)
-	public String newPage(Model model){
-		
+	public String newPage(Model model) {
+
+		model.addAttribute("newStuff", new StuffToChoose());
+
 		return "add-new";
 	}
 }
