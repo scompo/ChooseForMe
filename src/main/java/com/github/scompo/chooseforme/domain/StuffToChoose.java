@@ -4,6 +4,15 @@ public class StuffToChoose {
 
 	private String name;
 
+	public StuffToChoose() {
+		
+		this(null);
+	}
+
+	public StuffToChoose(String name) {
+		this.name = name;
+	}
+
 	public String getName() {
 		return name;
 	}
