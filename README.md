@@ -2,6 +2,8 @@
 
 Choose for me
 
+pages here: [http://scompo.github.io/ChooseForMe/](http://scompo.github.io/ChooseForMe/)
+
 available here: [https://scompo-chooseforme.herokuapp.com/](https://scompo-chooseforme.herokuapp.com/)
 
 [![Build Status](https://travis-ci.org/scompo/ChooseForMe.svg?branch=master)](https://travis-ci.org/scompo/ChooseForMe)
