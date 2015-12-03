@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="main-template" lang="en">
+<head>
+<title>Choosen</title>
+</head>
+<body>
+
+	<div layout:fragment="panelTitle">
+		<h4>Choosen</h4>
+	</div>
+	<div layout:fragment="content">
+		<h1 th:text="${errorMessage}" th:if="${isError}">ERROR</h1>
+		<h1 th:text="${randomStuff.name}" th:unless="${isError}">Result</h1>
+		<a class="btn btn-default" href="#" th:href="@{/random}" role="button">Mhmm,
+			can we try something else?</a>
+		<a class="btn btn-default" href="#" th:href="@{/}" role="button">back</a>
+	</div>
+</body>
+</html>
