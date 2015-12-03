@@ -17,6 +17,8 @@
 				<label for="name">Name</label> <input type="text" th:field="*{name}"
 					class="form-control" id="name" placeholder="name"></input>
 			</div>
+			<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+				Error</p>
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
