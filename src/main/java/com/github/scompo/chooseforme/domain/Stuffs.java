@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class Stuffs extends ArrayList<StuffToChoose>{
-	
+
 	private static final long serialVersionUID = 3401471504840787452L;
 
 	public Stuffs() {
+		
 		super();
 	}
 
@@ -23,6 +24,5 @@ public class Stuffs extends ArrayList<StuffToChoose>{
 	public String toString() {
 		return "Stuffs [toString()=" + super.toString() + "]";
 	}
-
 
 }
