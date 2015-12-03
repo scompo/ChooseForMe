@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.github.scompo.chooseforme.domain.StuffToChoose;
@@ -39,5 +40,13 @@ public class PagesController {
 		model.addAttribute("newStuff", new StuffToChoose());
 
 		return "add-new";
+	}
+
+	@RequestMapping(value = "delete", method = RequestMethod.GET)
+	public String delete(@RequestParam(value = "name") String name, @ModelAttribute("allStuff") Stuffs stuffs) {
+
+		stuffs.remove(new StuffToChoose(name));
+
+		return "redirect:/";
 	}
 }
