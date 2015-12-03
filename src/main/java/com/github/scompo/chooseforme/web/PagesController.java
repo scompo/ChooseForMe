@@ -1,5 +1,6 @@
 package com.github.scompo.chooseforme.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -10,10 +11,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.github.scompo.chooseforme.domain.StuffToChoose;
 import com.github.scompo.chooseforme.domain.Stuffs;
+import com.github.scompo.chooseforme.services.RandomService;
 
 @Controller
 @SessionAttributes(names = { "allStuff" })
 public class PagesController {
+	
+	@Autowired
+	private RandomService randomService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
