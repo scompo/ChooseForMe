@@ -11,17 +11,16 @@
 		<h4>Stuff</h4>
 	</div>
 	<div layout:fragment="content">
+		<a class="btn btn-default" href="#" th:href="@{/new}" role="button">Add new</a>
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>#</th>
 					<th>name</th>
 					<th>delete</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="stuff : ${allStuff}">
-					<td>?</td>
 					<td th:text="${{stuff.name}}">first element</td>
 					<td><a href="#"><span class="glyphicon glyphicon-remove"
 							aria-hidden="true"></span></a></td>
