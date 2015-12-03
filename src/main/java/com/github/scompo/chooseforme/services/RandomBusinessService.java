@@ -23,8 +23,6 @@ public class RandomBusinessService implements RandomService {
 		Integer size = stuffs.size();
 
 		Integer randomNumber = RandomUtils.getRandomNumber(size - 1);
-		
-		System.err.println(randomNumber);
 
 		randomElement = stuffs.get(randomNumber);
 
