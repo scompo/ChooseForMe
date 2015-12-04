@@ -16,17 +16,14 @@ public class AllStuff extends ArrayList<StuffToChoose> {
 
 	public AllStuff() {
 		super();
-		System.err.println("constructing!");
 	}
 
 	public AllStuff(Collection<? extends StuffToChoose> c) {
 		super(c);
-		System.err.println("constructing with collection!");
 	}
 
 	public AllStuff(int initialCapacity) {
 		super(initialCapacity);
-		System.err.println("constructing inital capacity!");
 	}
 
 	@Override
