@@ -60,14 +60,14 @@ public class PagesController {
 		if (stuffs == null || stuffs.isEmpty()) {
 
 			bindingResult.reject("errors.allStuff", "list is empty");
-			return "choosen";
+			return "chosen";
 		}
 
 		StuffToChoose randomStuff = getRandomStuffToChoose(stuffs);
 
 		model.addAttribute("randomStuff", randomStuff);
 
-		return "choosen";
+		return "chosen";
 	}
 
 	private StuffToChoose getRandomStuffToChoose(Stuffs stuffs) {

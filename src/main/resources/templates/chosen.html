@@ -4,12 +4,12 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="main-template" lang="en">
 <head>
-<title>Choosen</title>
+<title>Chosen</title>
 </head>
 <body>
 
 	<div layout:fragment="panelTitle">
-		<h4>Choosen</h4>
+		<h4>Chosen</h4>
 	</div>
 	<div layout:fragment="content">
 		<p th:if="${#fields.hasErrors('allStuff')}" th:errors="*{allStuff}">Name
