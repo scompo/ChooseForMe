@@ -8,13 +8,23 @@ import javax.validation.constraints.Size;
 public class StuffToChoose implements Serializable {
 
 	private static final long serialVersionUID = -1606954157038119885L;
-	
+
+	/**
+	 * Minimum name length.
+	 */
+	public static final int MIN_NAME_LENGTH = 1;
+
+	/**
+	 * Maximum name length.
+	 */
+	public static final int MAX_NAME_LENGTH = 250;
+
 	@NotNull
-	@Size(min = 1)
+	@Size(min = MIN_NAME_LENGTH, max = MAX_NAME_LENGTH)
 	private String name;
 
 	public StuffToChoose() {
-		
+
 		this(null);
 	}
 
@@ -55,7 +65,7 @@ public class StuffToChoose implements Serializable {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "StuffToChoose [name=" + name + "]";
