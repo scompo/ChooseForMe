@@ -1,10 +1,14 @@
 package com.github.scompo.chooseforme.domain;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class StuffToChoose {
+public class StuffToChoose implements Serializable {
 
+	private static final long serialVersionUID = -1606954157038119885L;
+	
 	@NotNull
 	@Size(min = 1)
 	private String name;
