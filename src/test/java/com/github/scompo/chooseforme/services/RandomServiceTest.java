@@ -9,22 +9,22 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.github.scompo.chooseforme.domain.AllStuff;
 import com.github.scompo.chooseforme.domain.StuffToChoose;
-import com.github.scompo.chooseforme.domain.Stuffs;
 
 public class RandomServiceTest {
 
-	private static final Stuffs NULL_STUFFS = null;
+	private static final AllStuff NULL_STUFFS = null;
 
 	private static final StuffToChoose ONLY_ELEMENT_STUFF_TO_CHOOSE = new StuffToChoose("ONLY ELEMENT");
 
-	private static final Stuffs ONE_ELEMENT_STUFFS = new Stuffs(Arrays.asList(ONLY_ELEMENT_STUFF_TO_CHOOSE));
+	private static final AllStuff ONE_ELEMENT_STUFFS = new AllStuff(Arrays.asList(ONLY_ELEMENT_STUFF_TO_CHOOSE));
 
 	private static final StuffToChoose STUFF_ONE = new StuffToChoose("ONE");
 
 	private static final StuffToChoose STUFF_TWO = new StuffToChoose("TWO");
 
-	private static final Stuffs MULTIPLE_ELEMENT_STUFFS = new Stuffs(Arrays.asList(STUFF_ONE, STUFF_TWO));
+	private static final AllStuff MULTIPLE_ELEMENT_STUFFS = new AllStuff(Arrays.asList(STUFF_ONE, STUFF_TWO));
 
 	private RandomService randomService;
 
@@ -45,10 +45,9 @@ public class RandomServiceTest {
 		randomService = null;
 	}
 
-	@Test(expected = NullPointerException.class)
-	public void testShouldReturnNullPointerExceptionIfStuffsIsNull() {
+	public void testShouldReturnNotPresentIfStuffsIsNull() {
 
-		randomService.getRandom(NULL_STUFFS);
+		assertEquals(StuffToChoose.NOT_PRESENT, randomService.getRandom(NULL_STUFFS));
 	}
 
 	@Test

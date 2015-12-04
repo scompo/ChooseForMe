@@ -3,22 +3,26 @@ package com.github.scompo.chooseforme.services;
 import org.springframework.stereotype.Service;
 
 import com.github.scompo.chooseforme.domain.StuffToChoose;
-import com.github.scompo.chooseforme.domain.Stuffs;
+import com.github.scompo.chooseforme.domain.AllStuff;
 import com.github.scompo.chooseforme.utils.RandomUtils;
 
 @Service
 public class RandomBusinessService implements RandomService {
 
 	@Override
-	public StuffToChoose getRandom(Stuffs stuffs) {
+	public StuffToChoose getRandom(AllStuff stuffs) {
 
 		StuffToChoose randomElement = null;
 
-		Integer size = stuffs.size();
+		if (stuffs == null || stuffs.isEmpty()) {
 
-		Integer randomNumber = RandomUtils.getRandomNumber(size - 1);
+			randomElement = StuffToChoose.NOT_PRESENT;
 
-		randomElement = stuffs.get(randomNumber);
+		}
+		else {
+
+			randomElement = stuffs.get(RandomUtils.getRandomNumber(stuffs.size() - 1));
+		}
 
 		return randomElement;
 	}

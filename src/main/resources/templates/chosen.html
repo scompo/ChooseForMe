@@ -12,10 +12,7 @@
 		<h4>Chosen</h4>
 	</div>
 	<div layout:fragment="content">
-		<p th:if="${#fields.hasErrors('allStuff')}" th:errors="*{allStuff}">Name
-			Error</p>
-		<h1 th:text="${randomStuff.name}"
-			th:unless="${#fields.hasErrors('allStuff')}">Result</h1>
+		<h1 th:text="${randomStuff.name}">Result</h1>
 		<a class="btn btn-default" href="#" th:href="@{/random}" role="button">Mhmm,
 			can we try something else?</a> <a class="btn btn-default" href="#"
 			th:href="@{/}" role="button">back</a>

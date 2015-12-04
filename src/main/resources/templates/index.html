@@ -13,7 +13,7 @@
 	<div layout:fragment="content">
 		<a class="btn btn-default" href="#" th:href="@{/new}" role="button">Add
 			new</a>
-		<a class="btn btn-default" href="#" th:href="@{/random}" th:unless = "${allStuff.isEmpty()}" role="button">Choose for me..</a>
+		<a class="btn btn-default" href="#" th:href="@{/random}" th:unless = "${beans.allStuff.isEmpty()}" role="button">Choose for me..</a>
 		<table class="table table-hover">
 			<thead>
 				<tr>
@@ -22,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="stuff : ${allStuff}">
+				<tr th:each="stuff : ${beans.allStuff}">
 					<td th:text="${{stuff.name}}">name</td>
 					<td><a href="#" th:href="@{/delete(name=${stuff.name})}"><span
 							class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>

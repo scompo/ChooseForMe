@@ -9,6 +9,8 @@ public class StuffToChoose implements Serializable {
 
 	private static final long serialVersionUID = -1606954157038119885L;
 
+	public static final StuffToChoose NOT_PRESENT = new StuffToChoose("empty list");
+	
 	/**
 	 * Minimum name length.
 	 */
