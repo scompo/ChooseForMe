@@ -12,10 +12,11 @@
 		<h4>Chosen</h4>
 	</div>
 	<div layout:fragment="content">
-		<h1 th:text="${randomStuff.name}">Result</h1>
-		<a class="btn btn-default" href="#" th:href="@{/random}" role="button">Mhmm,
-			can we try something else?</a> <a class="btn btn-default" href="#"
-			th:href="@{/}" role="button">back</a>
+		<h1 class="text-center" th:text="${randomStuff.name}">Result</h1>
+		<a class="btn btn-default btn-block" href="#" th:href="@{/random}"
+			role="button">Can we try something else?</a> <a
+			class="btn btn-default btn-block" href="#" th:href="@{/}"
+			role="button">Thanks this would do. Get me back!</a>
 	</div>
 </body>
 </html>

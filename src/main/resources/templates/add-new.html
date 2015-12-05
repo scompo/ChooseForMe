@@ -14,12 +14,18 @@
 		<form action="#" th:action="@{/new}" th:object="${newStuff}"
 			method="post">
 			<div class="form-group">
-				<label for="name">Name</label> <input type="text" th:field="*{name}"
-					class="form-control" id="name" placeholder="name"></input>
+				<label class="control-label" for="name">Name</label> <input
+					type="text" th:field="*{name}" class="form-control" id="name"
+					placeholder="name"></input>
 			</div>
-			<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
-				Error</p>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<div class="form-group">
+				<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name
+					Error</p>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-default btn-block">Add the created new stuff!
+				</button>
+			</div>
 		</form>
 	</div>
 </body>

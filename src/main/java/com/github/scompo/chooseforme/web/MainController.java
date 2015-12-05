@@ -28,4 +28,12 @@ public class MainController {
 
 		return "redirect:/";
 	}
+	
+	@RequestMapping(value = "deleteAll", method = RequestMethod.GET)
+	public String deleteAll() {
+
+		allStuff.clear();
+
+		return "redirect:/";
+	}
 }
