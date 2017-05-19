@@ -1,6 +1,7 @@
 # ChooseForMe
 
-Choose for me
+## Choose for me chooses for you.
+Just enter your options and it will randomly choose one for you.
 
 pages here: [http://scompo.github.io/ChooseForMe/](http://scompo.github.io/ChooseForMe/)
 
